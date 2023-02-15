@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import NavContainer from '../styles/NavBarStyled'
+import '../app.css'
 
 function NavBar() {
 
@@ -29,7 +30,6 @@ function NavBar() {
         <NavLink to="/user">🤓 Homer</NavLink>
         <NavLink to="/basket">🛒 Basket</NavLink>
         <a onClick={toggleTheme}>{darkModeEnabled(theme)}</a>
-        {/* <a className="${theme}" onClick={toggleTheme}>{} </a> */}
       </div>
     </NavContainer>
   )
