@@ -4,24 +4,25 @@ const initialState = {
   products: []
 };
 
-export const productsSlice = createSlice({
+export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    fetchProducts(state, action) {
-    },
     productsReceived(state, action) {
 
     }
   },
 });
 
-export const { addToBasket, removeFromBasket } = userSlice.actions;
+export const { productsReceived } = userSlice.actions;
 
-const fetchProductsAPI = () =>
-  fetch("https://reqres.in/api/users").then((response) => response.json());
+// const fetchProductsAPI = () => {
+//   fetch("https://fakestoreapi.com/products")
+//     .then((response) => response.json())
+//     .then((response) => { console.log(response) });
+// }
 
-export const fetchProducts = () => async (dispatch) => {
-  const response = await fetchProducts();
-  dispatch(usersReceived(response.data));
-};
+// const fetchProducts = () => async (dispatch) => {
+//   const response = await fetchProductsAPI();
+//   dispatch(response);
+// };
