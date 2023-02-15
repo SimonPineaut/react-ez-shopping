@@ -2,14 +2,16 @@ import React from 'react'
 import Cards from '../components/Cards'
 
 const fetchProductsAPI = () => {
-    fetch("https://reqres.in/api/users").then((response) => response.json());
-    console.log(response);
+    fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((response) => { console.log(response) });
 }
 
 function HomePage() {
     return (
         <div>
             <Cards />
+            <button onClick={fetchProductsAPI()}>fetch</button>
         </div>
     )
 }
