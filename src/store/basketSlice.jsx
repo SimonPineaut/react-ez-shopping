@@ -15,6 +15,6 @@ export const basketSlice = createSlice({
   },
 });
 
-export const { addProduct, removeProduct } = userSlice.actions;
+export const { addProduct, removeProduct } = basketSlice.actions;
 
 
