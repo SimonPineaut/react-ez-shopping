@@ -1,4 +1,3 @@
-import './App.css'
 import HomePage from './pages/HomePage'
 import BasketPage from './pages/BasketPage'
 import UserPage from './pages/UserPage'
