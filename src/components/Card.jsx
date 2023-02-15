@@ -1,6 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 
+function Card() {
+  return (
+    <Grid>
+      <ImageContainer>
+        <img src="images.jpeg" alt="" />
+      </ImageContainer>
+      <TextContainer>
+        <h3>titre</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium similique placeat iste accusantium ipsam iusto sint culpa quis quam quae, dolorum pariatur maxime voluptatum ratione?</p>
+        <span>25$</span>
+        <form >
+          <label>Quantity :</label>
+          <input type="text" />
+          <br />
+          <button>Add to basket</button>
+        </form>
+      </TextContainer>
+    </Grid>
+  )
+}
+
 const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -46,26 +67,6 @@ const TextContainer = styled.div`
     }
 `;
 
-function Card() {
-  return (
-    <Grid>
-      <ImageContainer>
-        <img src="images.jpeg" alt="" />
-      </ImageContainer>
-      <TextContainer>
-        <h3>titre</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium similique placeat iste accusantium ipsam iusto sint culpa quis quam quae, dolorum pariatur maxime voluptatum ratione?</p>
-        <span>25$</span>
-        <form >
-          <label>Quantity :</label>
-          <input type="text" />
-          <br />
-          <button>Add to basket</button>
-        </form>
-      </TextContainer>
-    </Grid>
-  )
-}
 
 export default Card
 

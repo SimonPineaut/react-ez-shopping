@@ -2,6 +2,19 @@ import React from 'react'
 import Card from '../components/Card'
 import styled from 'styled-components'
 
+function BasketPage() {
+    return (
+        <div>
+            <Welcome>
+                <h1>Hi Homer !</h1>
+                <p>There are 2 items in your basket</p>
+                <button>Clear basket</button>
+            </Welcome>
+            <Card />
+        </div>
+    )
+}
+
 const Welcome = styled.div`
     text-align: left;
     margin-bottom: 1em;
@@ -18,18 +31,4 @@ const Welcome = styled.div`
     }
 }
 `;
-
-function BasketPage() {
-    return (
-        <div>
-            <Welcome>
-                <h1>Hi Homer !</h1>
-                <p>There are 2 items in your basket</p>
-                <button>Clear basket</button>
-            </Welcome>
-            <Card />
-        </div>
-    )
-}
-
 export default BasketPage
