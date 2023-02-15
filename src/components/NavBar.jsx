@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import NavContainer from '../styles/NavBarStyled';
+import NavContainer from '../styles/NavBarStyled'
 
 function NavBar() {
 
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
   const toggleTheme = () => {
     if (theme === 'light') {
-      setTheme('dark');
+      setTheme('dark')
     } else {
-      setTheme('light');
+      setTheme('light')
     }
   };
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.body.className = theme;
-  }, [theme]);
+    localStorage.setItem('theme', theme)
+    document.body.className = theme
+  }, [theme])
+
+  let darkModeEnabled = (theme) => {
+    return theme === 'light' ? '⚫ Dark mode' : '⚪ Light mode'
+  }
 
   return (
     <NavContainer >
@@ -24,8 +28,8 @@ function NavBar() {
       <div>
         <NavLink to="/user">🤓 Homer</NavLink>
         <NavLink to="/basket">🛒 Basket</NavLink>
-        <a onClick={toggleTheme}>⚫ Dark mode</a>
-        {/* <a className="${theme}" onClick={toggleTheme}>{theme === light ? '⚫ Dark mode' : '🟠 Light mode'} </a> */}
+        <a onClick={toggleTheme}>{darkModeEnabled(theme)}</a>
+        {/* <a className="${theme}" onClick={toggleTheme}>{} </a> */}
       </div>
     </NavContainer>
   )
