@@ -14,7 +14,7 @@ export const productSlice = createSlice({
   }
 });
 
-export const { productsLoading, productsReceived } = productSlice.actions;
+export const { productsReceived } = productSlice.actions;
 
 const fetchProductsAPI = () =>
   fetch("https://fakestoreapi.com/products")

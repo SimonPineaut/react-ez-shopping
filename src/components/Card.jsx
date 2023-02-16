@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Grid from '../styles/CardStyled'
+import { addToBasket } from '../store/basketSlice'
 
 function Card({ product }) {
+  const dispatch = useDispatch()
+
+  const [inputValue, setInputValue] = useState(0);
   return (
     <Grid>
       <div className="imageContainer">
@@ -11,12 +16,15 @@ function Card({ product }) {
         <h3>{product.title}</h3>
         <p>{product.description}</p>
         <span>{product.price}$</span>
-        <form >
-          <label>Quantity :</label>
-          <input type="text" />
-          <br />
-          <button>Add to basket</button>
-        </form>
+        <br />
+        <label>Quantity : </label>
+        <input
+          type="number"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <br />
+        <button onClick={() => dispatch(addToBasket(product))}>Add to basket</button>
       </div>
     </Grid>
   )
