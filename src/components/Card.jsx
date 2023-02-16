@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 import Grid from '../styles/CardStyled'
 import { addToBasket, removeFromBasket } from '../store/basketSlice'
 
 function Card({ product }) {
   const dispatch = useDispatch()
+  const location = useLocation();
 
   const [inputValue, setInputValue] = useState(1);
   return (
@@ -23,10 +25,12 @@ function Card({ product }) {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <br />
-        <button onClick={() => dispatch(addToBasket(product))}>Add to basket</button>
-        <br />
-        <button onClick={() => dispatch(removeFromBasket(product))}>remove from basket</button>
+        {location.pathname !== "/basket" && (
+          <button onClick={() => dispatch(addToBasket(product))}>add to basket</button>
+        )}
+        {location.pathname === "/basket" && (
+          <button onClick={() => dispatch(removeFromBasket(product))}>remove from basket</button>
+        )}
       </div>
     </Grid>
   )

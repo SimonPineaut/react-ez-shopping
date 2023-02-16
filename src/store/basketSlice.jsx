@@ -13,10 +13,11 @@ export const basketSlice = createSlice({
       state.basket.push(action.payload)
     },
     removeFromBasket(state, action) {
+      console.log(state.basket.indexOf(action.payload));
       state.basket.splice(state.basket.indexOf(action.payload), 1)
     },
     clearBasket(state, action) {
-      state.basket = initialState
+      state.basket = []
     }
   },
 })
