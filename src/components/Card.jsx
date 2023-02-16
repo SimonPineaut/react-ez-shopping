@@ -25,6 +25,7 @@ function Card({ product }) {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
+        <br />
         {location.pathname !== "/basket" && (
           <button onClick={() => dispatch(addToBasket(product))}>add to basket</button>
         )}

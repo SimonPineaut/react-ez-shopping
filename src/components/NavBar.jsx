@@ -5,8 +5,11 @@ import NavContainer from '../styles/NavBarStyled'
 import '../app.css'
 
 function NavBar() {
-  const state = useSelector(state => state.basket.basket)
+  const basket = useSelector(state => state.basket.basket)
+  const userName = useSelector(state => state.user.firstname)
+
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark')
@@ -28,8 +31,8 @@ function NavBar() {
     <NavContainer >
       <h1><NavLink to="/">EZ SHOPPING</NavLink></h1>
       <div>
-        <NavLink to="/user">🤓 Homer</NavLink>
-        <NavLink to="/basket">🛒 <strong>{state.length}</strong> Basket</NavLink>
+        <NavLink to="/user">🤓 {userName}</NavLink>
+        <NavLink to="/basket">🛒 <strong>{basket.length}</strong> Basket</NavLink>
         <a onClick={toggleTheme}>{darkModeEnabled(theme)}</a>
       </div>
     </NavContainer>
