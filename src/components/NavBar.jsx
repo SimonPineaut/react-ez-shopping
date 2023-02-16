@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import NavContainer from '../styles/NavBarStyled'
 import '../app.css'
 
 function NavBar() {
-
+  const state = useSelector(state => state.basket.basket)
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -28,7 +29,7 @@ function NavBar() {
       <h1><NavLink to="/">EZ SHOPPING</NavLink></h1>
       <div>
         <NavLink to="/user">🤓 Homer</NavLink>
-        <NavLink to="/basket">🛒 Basket</NavLink>
+        <NavLink to="/basket">🛒 {state.length} Basket</NavLink>
         <a onClick={toggleTheme}>{darkModeEnabled(theme)}</a>
       </div>
     </NavContainer>

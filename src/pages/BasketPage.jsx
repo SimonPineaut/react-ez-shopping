@@ -13,9 +13,7 @@ function BasketPage() {
             <Welcome>
                 <h1>Hi Homer !</h1>
                 <p>There are {basketProducts.length} items in your basket</p>
-                <button
-                    onClick={() => dispatch(clearBasket)}>Clear basket
-                </button>
+                <button onClick={() => dispatch(clearBasket())}>Clear basket</button>
             </Welcome>
             {basketProducts && (
                 basketProducts.map((product, index) =>

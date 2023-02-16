@@ -14,7 +14,6 @@ export const basketSlice = createSlice({
     removeFromBasket(state, action) {
       console.log('state dans SLICE', current(state));
       state.basket.filter((product) => {
-        console.log(product);
         product.id !== action.payload.id
       })
 
