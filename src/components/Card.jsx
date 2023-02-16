@@ -1,9 +1,7 @@
 import React from 'react'
 import Grid from '../styles/CardStyled'
 
-
 function Card({ product }) {
-  // console.log('product dans CARD', product);
   return (
     <Grid>
       <div className="imageContainer">
@@ -12,7 +10,7 @@ function Card({ product }) {
       <div className="textContainer">
         <h3>{product.title}</h3>
         <p>{product.description}</p>
-        <span>{product.price}</span>
+        <span>{product.price}$</span>
         <form >
           <label>Quantity :</label>
           <input type="text" />

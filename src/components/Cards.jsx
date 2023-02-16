@@ -8,8 +8,8 @@ function Cards() {
   return (
     <Grid>
       {products.length > 0 && (
-        products.map((product, i) =>
-          <Card key={i} product={product} />
+        products.map((product, index) =>
+          <Card key={index} product={product} />
         )
       )}
     </Grid>

@@ -8,11 +8,7 @@ export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    productsLoading(state, action) {
-      state.loading = "pending";
-    },
     productsReceived(state, action) {
-      state.loading = "idle";
       state.products = action.payload;
     },
   }
@@ -28,7 +24,6 @@ const fetchProductsAPI = () =>
     })
 
 export const fetchProducts = () => async (dispatch) => {
-  dispatch(productsLoading());
   const response = await fetchProductsAPI();
   dispatch(productsReceived(response));
 };
