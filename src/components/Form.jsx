@@ -39,7 +39,7 @@ const Form = () => {
                 <div>
                     <label htmlFor="">Your email :</label>
                     <input
-                        type="email"
+                        type="text"
                         value={inputEmailValue}
                         onChange={(e) => setInputEmailValue(e.target.value)}
                     />
