@@ -1,8 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
-  basket: [],
-  quantity: 0
+  basket: []
 };
 
 export const basketSlice = createSlice({
@@ -13,8 +12,12 @@ export const basketSlice = createSlice({
       state.basket.push(action.payload)
     },
     removeFromBasket(state, action) {
-      console.log(state.basket.indexOf(action.payload));
-      state.basket.splice(state.basket.indexOf(action.payload), 1)
+      console.log('state dans SLICE', current(state));
+      state.basket.filter((product) => {
+        console.log(product);
+        product.id !== action.payload.id
+      })
+
     },
     clearBasket(state, action) {
       state.basket = []
