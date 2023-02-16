@@ -9,6 +9,10 @@ const Grid = styled.div`
       display: flex;
       justify-content: center;
       align-items: flex-start;
+
+      img {
+        max-width: 100%;
+      }
     }
 
     .textContainer {

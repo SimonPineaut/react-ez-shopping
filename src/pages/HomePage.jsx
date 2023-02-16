@@ -1,22 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Cards from '../components/Cards'
-
+import { fetchProducts } from '../store/productSlice'
 
 function HomePage() {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [])
+
     return (
         <div>
             <Cards />
-            <button onClick={() => fetchProductsAPI()}>fetch</button>
         </div>
     )
 }
-
-const fetchProductsAPI = () => {
-    fetch("https://fakestoreapi.com/products")
-        .then((response) => response.json())
-        .then((response) => { console.log(response) });
-}
-
-
 
 export default HomePage
