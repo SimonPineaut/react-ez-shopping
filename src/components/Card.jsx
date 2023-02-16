@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Grid from '../styles/CardStyled'
-import { addToBasket } from '../store/basketSlice'
+import { addToBasket, removeFromBasket } from '../store/basketSlice'
 
 function Card({ product }) {
   const dispatch = useDispatch()
@@ -25,6 +25,8 @@ function Card({ product }) {
         />
         <br />
         <button onClick={() => dispatch(addToBasket(product))}>Add to basket</button>
+        <br />
+        <button onClick={() => dispatch(removeFromBasket(product))}>remove from basket</button>
       </div>
     </Grid>
   )
