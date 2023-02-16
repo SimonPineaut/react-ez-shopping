@@ -7,7 +7,7 @@ function Cards() {
   const products = useSelector(state => state.product.products)
   return (
     <Grid>
-      {products.length > 0 && (
+      {products && (
         products.map((product, index) =>
           <Card key={index} product={product} />
         )

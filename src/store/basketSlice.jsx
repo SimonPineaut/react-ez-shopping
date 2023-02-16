@@ -10,14 +10,17 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     addToBasket(state, action) {
-      console.log('action ds SLICE', action);
-      state.basket = action.payload;
+      state.basket.push(action.payload)
     },
     removeFromBasket(state, action) {
+      state.basket.splice(indexof(action.payload), 1)
     },
+    clearBasket(state, action) {
+      state.basket = initialState
+    }
   },
-});
+})
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const { addToBasket, removeFromBasket, clearBasket } = basketSlice.actions
 
 

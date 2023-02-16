@@ -6,7 +6,7 @@ import { addToBasket } from '../store/basketSlice'
 function Card({ product }) {
   const dispatch = useDispatch()
 
-  const [inputValue, setInputValue] = useState(0);
+  const [inputValue, setInputValue] = useState(1);
   return (
     <Grid>
       <div className="imageContainer">

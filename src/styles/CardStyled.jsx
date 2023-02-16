@@ -4,6 +4,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4em;
+    margin-bottom: 3em;
 
     .imageContainer {
       display: flex;
@@ -11,7 +12,7 @@ const Grid = styled.div`
       align-items: flex-start;
 
       img {
-        max-width: 100%;
+        max-width: 250px;
       }
     }
 
@@ -32,7 +33,7 @@ const Grid = styled.div`
     }
 
     input {
-      width: 10%;
+      width: 7%;
       margin: .5em;
     }
 
