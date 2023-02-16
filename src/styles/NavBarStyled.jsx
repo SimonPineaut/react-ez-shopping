@@ -19,11 +19,10 @@ const NavContainer = styled.div`
       margin: 0 1em;
       text-decoration: none;
       color: black;
-      font-weight: bold;
 
-    &:hover {
-      cursor: pointer;
-    }
+      &:hover {
+        cursor: pointer;
+      }
     }
 `;
 

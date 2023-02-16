@@ -29,7 +29,7 @@ function NavBar() {
       <h1><NavLink to="/">EZ SHOPPING</NavLink></h1>
       <div>
         <NavLink to="/user">🤓 Homer</NavLink>
-        <NavLink to="/basket">🛒 {state.length} Basket</NavLink>
+        <NavLink to="/basket">🛒 <strong>{state.length}</strong> Basket</NavLink>
         <a onClick={toggleTheme}>{darkModeEnabled(theme)}</a>
       </div>
     </NavContainer>
