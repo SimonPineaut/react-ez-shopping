@@ -48,9 +48,9 @@ function Card({ product }) {
             <button onClick={() => dispatch(removeFromBasket(product))}>remove from basket</button>
           </React.Fragment>
         )}
-        {basket.includes(product) && location.pathname !== "/basket" && (
+        {/* {basket.includes(product) && location.pathname !== "/basket" && (
           <p>Already in basket : ✅</p>
-        )}
+        )} */}
       </div>
     </Grid>
   )
