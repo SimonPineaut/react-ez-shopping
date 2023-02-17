@@ -6,6 +6,11 @@ import '../styles/app.css'
 
 function NavBar() {
   const basket = useSelector(state => state.basket.basket)
+  const quantity = basket.reduce((total, current) => {
+    return total + current.quantity;
+  }, 0)
+
+
   const firstname = useSelector(state => state.user.firstname)
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
@@ -31,7 +36,7 @@ function NavBar() {
       <h1><NavLink to="/">EZ SHOPPING</NavLink></h1>
       <div>
         <NavLink to="/user">🤓 {firstname || 'sign up here'}</NavLink>
-        <NavLink to="/basket">🛒 <strong>{basket.length}</strong> Basket</NavLink>
+        <NavLink to="/basket">🛒 <strong>{quantity}</strong> Basket</NavLink>
         <a onClick={toggleTheme}>{darkModeEnabled(theme)}</a>
       </div>
     </NavContainer>

@@ -7,9 +7,9 @@ const logger = store => next => action => {
     //     localStorage.setItem(action.payload.title, JSON.stringify(action.payload))
     // }
 
-    if (action.type === 'basket/removeFromBasket') {
-        localStorage.removeItem(action.payload.title, JSON.stringify(action.payload))
-    }
+    // if (action.type === 'basket/removeFromBasket') {
+    //     localStorage.removeItem(action.payload.title, JSON.stringify(action.payload))
+    // }
 
     let result = next(action)
     return result

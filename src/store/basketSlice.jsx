@@ -9,7 +9,8 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     addToBasket(state, action) {
-      state.basket.push(action.payload)
+      const productWithQuantity = Object.assign({ quantity: parseInt(action.payload.quantity) }, action.payload.item);
+      state.basket.push(productWithQuantity)
     },
     removeFromBasket(state, action) {
       state.basket.splice(current(state.basket).indexOf(action.payload), 1)
