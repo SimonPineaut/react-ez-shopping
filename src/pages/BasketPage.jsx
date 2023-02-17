@@ -9,9 +9,8 @@ function BasketPage() {
     const basketProducts = useSelector(state => state.basket.basket)
     const userName = useSelector(state => state.user.firstname)
     const totalPrice = basketProducts.reduce((total, current) => {
-        return total + current.price;
+        return total + (current.price * current.quantity);
     }, 0)
-
 
     return (
         <div>
