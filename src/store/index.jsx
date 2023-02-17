@@ -11,6 +11,9 @@ const store = configureStore({
         basket: basketSlice.reducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    // preloadedState: {
+    //     user: JSON.parse(localStorage.getItem('user'))
+    // }
 });
 
 export default store;

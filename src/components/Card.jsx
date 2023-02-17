@@ -28,22 +28,23 @@ function Card({ product }) {
         <br />
         <br />
         <span>Quantity : </span>
-        <input
-          type="number"
-          value={inputQuantityValue}
-          onChange={(e) => setInputQuantityValue(e.target.value)}
-        />
-        <br />
+
         {location.pathname !== "/basket" && (
-          <button onClick={() => dispatch(addToBasket(products))}>add to basket</button>
-        )}
-        {location.pathname === "/basket" && (
           <React.Fragment>
             <input
               type="number"
-              value={quantity}
+              min="1"
+              value={inputQuantityValue}
               onChange={(e) => setInputQuantityValue(e.target.value)}
             />
+            <br />
+            <button onClick={() => dispatch(addToBasket(products))}>add to basket</button>
+          </React.Fragment>
+        )}
+        {location.pathname === "/basket" && (
+          <React.Fragment>
+            <span>{product.quantity}</span>
+            <br />
             <button onClick={() => dispatch(removeFromBasket(product))}>remove from basket</button>
           </React.Fragment>
         )}

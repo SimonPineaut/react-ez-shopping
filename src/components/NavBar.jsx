@@ -5,13 +5,14 @@ import NavContainer from '../styles/NavBarStyled'
 import '../styles/app.css'
 
 function NavBar() {
+
   const basket = useSelector(state => state.basket.basket)
   const quantity = basket.reduce((total, current) => {
     return total + current.quantity;
   }, 0)
 
-
   const firstname = useSelector(state => state.user.firstname)
+
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
   const toggleTheme = () => {
