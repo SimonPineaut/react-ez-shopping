@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createUser } from '../store/userSlice';
 import InputContainer from '../styles/FormStyled'
 

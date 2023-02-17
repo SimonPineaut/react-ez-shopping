@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { clearBasket } from '../store/basketSlice'
-import Card from '../components/Card'
+import ProductCard from '../components/ProductCard'
 import Welcome from '../styles/BasketPageStyled'
 
-const basketFromLocalStorage = localStorage.getItem('basket')
 
 function BasketPage() {
     const dispatch = useDispatch()
@@ -34,7 +33,7 @@ function BasketPage() {
             </Welcome>
             {basketProducts && (
                 basketProducts.map((product, index) =>
-                    <Card key={index} product={product} />
+                    <ProductCard key={index} product={product} />
                 )
             )}
         </div>

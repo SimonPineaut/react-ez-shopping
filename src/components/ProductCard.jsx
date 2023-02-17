@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import Grid from '../styles/CardStyled'
+import Grid from '../styles/ProductCardStyled'
 import { addToBasket, removeFromBasket } from '../store/basketSlice'
 
-function Card({ product }) {
+function ProductCard({ product }) {
   const dispatch = useDispatch()
   const location = useLocation();
   const basket = useSelector(state => state.basket.basket)
@@ -56,5 +56,5 @@ function Card({ product }) {
   )
 }
 
-export default Card
+export default ProductCard
 
