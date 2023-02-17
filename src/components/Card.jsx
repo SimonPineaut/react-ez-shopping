@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import Grid from '../styles/CardStyled'
 import { addToBasket, removeFromBasket } from '../store/basketSlice'
 
 function Card({ product }) {
   const dispatch = useDispatch()
+  const basket = useSelector(state => state.basket.basket)
   const location = useLocation();
 
   const [inputValue, setInputValue] = useState(1);
@@ -17,9 +18,10 @@ function Card({ product }) {
       <div className="textContainer">
         <h3>{product.title}</h3>
         <p>{product.description}</p>
-        <span>{product.price}$</span>
+        <span>$ {product.price}</span>
         <br />
-        <label>Quantity : </label>
+        <br />
+        <span>Quantity : </span>
         <input
           type="number"
           value={inputValue}
@@ -31,6 +33,9 @@ function Card({ product }) {
         )}
         {location.pathname === "/basket" && (
           <button onClick={() => dispatch(removeFromBasket(product))}>remove from basket</button>
+        )}
+        {basket.includes(product) && location.pathname !== "/basket" && (
+          <p>Already in basket : ✅</p>
         )}
       </div>
     </Grid>

@@ -1,10 +1,16 @@
-import { removeFromBasket } from "../store/basketSlice";
-
 const logger = store => next => action => {
-    // console.log('state dans MIDDLEWARE', store.getState());
     if (action.type === 'user/createUser') {
-
+        localStorage.setItem('user', JSON.stringify(action.payload))
     }
+
+    // if (action.type === 'basket/addToBasket') {
+    //     localStorage.setItem(action.payload.title, JSON.stringify(action.payload))
+    // }
+
+    if (action.type === 'basket/removeFromBasket') {
+        localStorage.removeItem(action.payload.title, JSON.stringify(action.payload))
+    }
+
     let result = next(action)
     return result
 }

@@ -1,0 +1,29 @@
+button {
+    box-shadow: 2px 2px 2px grey;
+}
+
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.light {
+    background-color: #fff;
+    color: #333;
+}
+
+.d-none {
+    display: none;
+}
+
+.basket-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.total-price {
+    margin-right: 1em;
+}

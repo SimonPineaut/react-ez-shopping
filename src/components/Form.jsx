@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from '../store/userSlice';
 import InputContainer from '../styles/FormStyled'
 
@@ -16,12 +16,11 @@ const Form = () => {
         email: inputEmailValue
     }
 
-
     return (
         <div>
             <InputContainer>
                 <div>
-                    <label htmlFor="">Your firstname :</label>
+                    <label>Your firstname :</label>
                     <input
                         type="text"
                         value={inputFirstnameValue}
@@ -29,7 +28,7 @@ const Form = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="">Your lastname :</label>
+                    <label>Your lastname :</label>
                     <input
                         type="text"
                         value={inputLastnameValue}
@@ -37,14 +36,14 @@ const Form = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="">Your email :</label>
+                    <label>Your email :</label>
                     <input
                         type="text"
                         value={inputEmailValue}
                         onChange={(e) => setInputEmailValue(e.target.value)}
                     />
                 </div>
-                <button onClick={() => dispatch(createUser(user))}>Save</button>
+                <button onClick={() => dispatch(createUser(user))}>Save account</button>
             </InputContainer>
         </div>
     );

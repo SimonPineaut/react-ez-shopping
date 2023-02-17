@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Welcome = styled.div`
-    text-align: left;
     margin-bottom: 1em;
     border-bottom: 3px solid #B0B0B0;
 

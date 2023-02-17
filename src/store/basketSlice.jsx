@@ -12,14 +12,11 @@ export const basketSlice = createSlice({
       state.basket.push(action.payload)
     },
     removeFromBasket(state, action) {
-      state.basket.filter((product) =>
-        product.id !== action.payload.id
-      )
-
+      state.basket.splice(current(state.basket).indexOf(action.payload), 1)
     },
     clearBasket(state, action) {
       state.basket = []
-    }
+    },
   },
 })
 

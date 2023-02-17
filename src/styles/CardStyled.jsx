@@ -19,34 +19,36 @@ const Grid = styled.div`
     .textContainer {
       text-align: left;
 
-    h3 {
-      margin: 0 0 .5em 0;
-      font-weight: bold;
-    }
-
-    p {
-      margin: 0 0 .2em 0;
-    }
-
-    span, label {
-      font-weight: bold;
-    }
-
-    input {
-      width: 7%;
-      margin: .5em;
-    }
-
-    button {
-      width: 40%;
-      background-color: #EAB023;
-      padding: 0.4em;
-      border: none;
-
-      &:hover {
-        cursor: pointer;
+      h3 {
+        margin: 0 0 1em 1em;
+        font-weight: bold;
       }
-    }
+
+      p {
+        margin: 1em ;
+      }
+
+      span {
+        font-weight: bold;
+        margin: 1em 0 2em 1em ;
+}
+
+      input {
+        width: 40px;
+        text-align: center;
+      }
+
+      button {
+        width: 40%;
+        background-color: #EAB023;
+        padding: 0.4em;
+        margin: 1em 0 0 1em;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 `;
 
